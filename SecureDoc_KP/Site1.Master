@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>New DOC System</title>
+    <style>
+        /* Overall style */
+    body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('Images/Designer%20(28).png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for the form content */
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ddd;
+            transition: transform 0.3s;
+        }
+
+        .form-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Title Styling */
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Basic form element styling */
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Button styling */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button.cancel {
+            background-color: #d9534f;
+        }
+
+        button.cancel:hover {
+            background-color: #c9302c;
+        }
+
+        /* Responsive design */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="display: grid; place-items: center; height: 100vh; width: 500px;">
+            <img src="Images/Screenshot_2024-11-10_140040-removebg-preview.png" alt="SecureDoc Logo" style="width:200px; height:auto;">
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+ <label for="username">Username</label>
+ <input type="text" id="username" name="username" required placeholder="Enter your username">
+
+ <label for="email">Email</label>
+ <input type ="email" id="email" name="email" required placeholder="Enter your email">
+
+ <label for="password">Password</label>
+ <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+ <div class="button-container">
+     <button type="submit">Submit</button>
+     <button type="button" class="cancel">Cancel</button>
+ </div>
+
+            </asp:ContentPlaceHolder>
+        </div>
+     </form>
+  </body>
+</html>
